@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NewsSurvey"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Оценка новостей" Height="380" Width="525">
     <Grid>
-        
+        <RichTextBox x:Name="textNews" Focusable="False" Margin="10,10,10,136">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="lllllllllllllllllllllllllllllllllllllllllllll"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <GroupBox x:Name="groupBox" Header="Оценки" HorizontalAlignment="Left" Margin="10,0,0,10" Width="287" Height="121" VerticalAlignment="Bottom">
+            <Grid>
+                <CheckBox x:Name="checkSource" Content="Достоверный источник" HorizontalAlignment="Left" Margin="0,0,-6,0" VerticalAlignment="Top"/>
+                <CheckBox x:Name="checkEmotion" Content="Эмоциональная нагрузка" HorizontalAlignment="Left" Margin="0,20,-17,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="comboMark" HorizontalAlignment="Left" Margin="0,40,0,0" VerticalAlignment="Top" Width="120">
+                    <ComboBoxItem Content="1" Background="White" IsSelected="True"/>
+                    <ComboBoxItem Content="2"/>
+                    <ComboBoxItem Content="3"/>
+                    <ComboBoxItem Content="4"/>
+                    <ComboBoxItem Content="5"/>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Header="Навигация" Margin="0,0,10,10" HorizontalAlignment="Right" Width="205" Height="121" VerticalAlignment="Bottom">
+            <Grid>
+                <Button x:Name="buttonNext" Content="Следующий" Click="buttonNext_Click" Margin="75,45,10,24"/>
+                <Button x:Name="button" Content="Предыдущий" Click="button_Click" RenderTransformOrigin="-0.17,-1.044" Margin="75,10,10,59"/>
+                <TextBox x:Name="textCurrent" Margin="10,10,123,66" TextWrapping="Wrap" Text="TextBox" KeyDown="textCurrent_KeyDown" GotFocus="textCurrent_GotFocus"/>
+            </Grid>
+        </GroupBox>
+
     </Grid>
 </Window>
